@@ -19,6 +19,7 @@
     "lint": "run-p lint:**",
     "lint:eslint": "eslint --fix --ext .js,.ts src",
     "lint:typecheck": "tsc --noEmit",
+    "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --outFile ./dist/types.d.ts --skipLibCheck",
     "prepublishOnly": "npm run build"
   },
   "repository": {
