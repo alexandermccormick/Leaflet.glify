@@ -1,6 +1,6 @@
 {
   "name": "leaflet.glify-typed",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "web gl renderer plugin for leaflet with type definitions",
   "main": "dist/glify.js",
   "browser": "dist/glify-browser.js",
@@ -9,7 +9,7 @@
     "/src",
     "/dist"
   ],
-  "types": "dist/types.d.ts",
+  "types": "dist/types/src",
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack.config.js",
@@ -20,7 +20,7 @@
     "lint": "run-p lint:**",
     "lint:eslint": "eslint --fix --ext .js,.ts src",
     "lint:typecheck": "tsc --noEmit",
-    "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --outFile ./dist/types.d.ts --skipLibCheck",
+    "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationMap --declarationDir ./dist/types --skipLibCheck",
     "prepublishOnly": "npm run build"
   },
   "repository": {
